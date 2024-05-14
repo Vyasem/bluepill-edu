@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debbuger BluePill",
+			"type": "cortex-debug",
+			"request": "launch",
+			"cwd": "${workspaceRoot}",
+			"executable": "${command:cmake.launchTargetPath}",
+			"servertype": "stlink",
+			"device": "STM32F103C8",
+			"interface": "swd",
+			"runToEntryPoint": "main",
+			"breakAfterReset": true,
+		}
+	],
+	"compounds": []
+}
