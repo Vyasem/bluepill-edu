@@ -17,6 +17,9 @@ set_property(GLOBAL PROPERTY RULE_MESSAGES OFF)
 
 project(BluePill VERSION 1.0.0 LANGUAGES C CXX ASM)
 
+set(APP_DIR      ${PROJECT_SOURCE_DIR}/app)
+set(LIBS_DIR     ${PROJECT_SOURCE_DIR}/libs)
+
 # region HAL
 set(HAL_INCLUDE_DIRS
     # Put here your include dirs, one in each line, relative to CMakeLists.txt file location
@@ -25,6 +28,8 @@ set(HAL_INCLUDE_DIRS
     ${PROJECT_SOURCE_DIR}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
     ${PROJECT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32F1xx/Include
     ${PROJECT_SOURCE_DIR}/Drivers/CMSIS/Include
+    ${APP_DIR}
+    #${LIBS_DIR}/ssd1309
 )
 # endregion
 
@@ -80,7 +85,7 @@ set(MCU_LINKER_OPTION
 )
 # endregion
 
-file(GLOB_RECURSE APP_SOURCES
+file(GLOB_RECURSE HAL_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/Core/*.c
 	${CMAKE_CURRENT_SOURCE_DIR}/Drivers/*.c
 	${CMAKE_CURRENT_SOURCE_DIR}/Core/*.cpp
@@ -88,8 +93,15 @@ file(GLOB_RECURSE APP_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/*.s
 )
 
+file(GLOB_RECURSE APP_SOURCES
+	${APP_DIR}/*.c
+	${APP_DIR}/*.cpp
+	${LIBS_DIR}/ssd1309/*.cpp
+	${LIBS_DIR}/ssd1309/*.c
+)
+
 # Build lib
-add_executable(${CMAKE_PROJECT_NAME} ${APP_SOURCES})
+add_executable(${CMAKE_PROJECT_NAME} ${HAL_SOURCES} ${APP_SOURCES})
 
 # Include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${HAL_INCLUDE_DIRS})
