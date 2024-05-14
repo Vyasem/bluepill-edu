@@ -20,7 +20,7 @@
             "cStandard": "c11",
             "cppStandard": "gnu++20",
             "intelliSenseMode": "gcc-arm",
-            "compilerPath": "C:/work/compiler/SysGCC/arm-eabi/bin/arm-none-eabi-gcc.exe"
+            "compilerPath": "arm-none-eabi-gcc.exe"
         }
     ],
     "version": 4
