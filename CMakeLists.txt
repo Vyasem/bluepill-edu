@@ -82,6 +82,7 @@ set(MCU_LINKER_OPTION
     -fno-rtti
     -Wl,--end-group
     -Wl,--print-memory-usage
+    -Wl,--gc-sections
 )
 # endregion
 
