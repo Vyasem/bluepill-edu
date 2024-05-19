@@ -3,7 +3,9 @@
         {
             "name": "MCU",
             "includePath": [
-                "${workspaceFolder}",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/app",
+                "${workspaceFolder}/libs/ssd1309",
                 "${workspaceFolder}/Core/Inc",
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
@@ -11,7 +13,7 @@
             ],
             "defines": [
                 "__STM32F1xx_FAMILY",
-                "STM32F103xx",
+                "STM32F103xB",
                 "__STM32F103_SUBFAMILY",
                 "ARM_MATH_CM3",
                 "USE_FULL_LL_DRIVER",
@@ -20,7 +22,7 @@
             "cStandard": "c11",
             "cppStandard": "gnu++20",
             "intelliSenseMode": "gcc-arm",
-            "compilerPath": "C:/work/compiler/SysGCC/arm-eabi/bin/arm-none-eabi-gcc.exe"
+            "compilerPath": "arm-none-eabi-gcc.exe"
         }
     ],
     "version": 4
