@@ -4,6 +4,7 @@
 #include "main.h"
 #include "stm32f1xx_ll_gpio.h"
 #include "stm32f1xx_hal_spi.h"
+#include "stm32f1xx_ll_spi.h"
 
 extern SPI_HandleTypeDef hspi1;
 

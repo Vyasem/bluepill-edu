@@ -12,7 +12,7 @@
 			"interface": "swd",
 			"runToEntryPoint": "main",
 			"breakAfterReset": true,
-			"showDevDebugOutput": "raw"
+			"showDevDebugOutput": "raw",
 		}
 	],
 	"compounds": []

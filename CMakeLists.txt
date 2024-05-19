@@ -29,7 +29,7 @@ set(HAL_INCLUDE_DIRS
     ${PROJECT_SOURCE_DIR}/Drivers/CMSIS/Device/ST/STM32F1xx/Include
     ${PROJECT_SOURCE_DIR}/Drivers/CMSIS/Include
     ${APP_DIR}
-    #${LIBS_DIR}/ssd1309
+    ${LIBS_DIR}/ssd1309
 )
 # endregion
 
